@@ -3,9 +3,12 @@
   font-family: 'Merriweather', serif;
 }
 
-input[placeholder="Required"]{
+input[placeholder="Required"] {
   text-align: right;
   font-style: italic;
+}
+input:focus::placeholder {
+  color: transparent;
 }
 .btn {
   background-color: #4EBBB5;
@@ -35,6 +38,7 @@ select {
 input[type='text']:focus,
 input[type='tel']:focus,
 input[type='email']:focus,
+textarea:focus,
 select:focus {
   border-color: #30577D;
   text-align: left;
@@ -58,109 +62,99 @@ select {
 option:not(:first-of-type) {
   color: black;
 }
+header {
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  color: white;
+  background-color: #2D3945;
+}
+.intro {
+  border-bottom-style: solid;
+  border-color: #2D3945;
+  color: #24313D;
+  font-weight: 300;
+  margin: 0 auto;
+  margin-bottom: 0;
+  margin-top: 1.75em;
+  text-align: center;
+  width: 90%;
+}
+.intro h2 {
+  font-size: 1.4em;
+}
+.intro p {
+  margin: -10px 10px 30px 10px;
+  font-size: 16px;
+  color: #BABEC1;
+}
+form {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 2px;
+}
+.contact-info label {
+  color: #4B5F72;
+  display: block;
+  margin-top: 12px;
+  text-align: left;
+  padding: 10px 10px 10px 0;
+}
+body {
+  margin: 0;
+  width: auto;
+}
+.page-title {
+  font-size: .75em;
+}
+fieldset {
+  margin: 0 -10px;
+  padding: 0 10px;
+  border-style: none;
+}
+.field-title {
+  color: #24313D;
+  display: block;
+  text-align: left;
+  margin: 0 0 5px -4px;
+  padding-top: 1.5em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#zipcode {
+  width: 50%;
+  margin-bottom: 2em;
+}
+.contact-box {
+  border-top-style: solid;
+  border-color: #2D3945;
+  border-width: 2px;
+}
+.newsletter-box {
+  border-top-style: solid;
+  border-color: #2D3945;
+  border-width: 2px;
+}
 
-/* Media Queries */
-
-@media (min-width: 320px) and (max-width: 767px) {
-  header {
-    display: inline-block;
-    padding: 10px;
-    width: 100%;
-    white-space: nowrap;
-    text-align: center;
-    color: white;
-    background-color: #2D3945;
-  }
-  .intro {
-    border-bottom-style: solid;
-    border-color: #2D3945;
-    color: #24313D;
-    font-weight: 300;
-    margin: 0 auto;
-    margin-bottom: 0;
-    margin-top: 1.75em;
-    text-align: center;
-    width: 90%;
-  }
-  .intro h2 {
-    font-size: 1.4em;
-  }
-  .intro p {
-    margin: -10px 10px 30px 10px;
-    font-size: 16px;
-    color: #BABEC1;
-  }
-  form {
-    margin: 0 auto;
-    width: 90%;
-    margin-top: 2px;
-  }
-  .contact-info label {
-    color: #4B5F72;
-    display: block;
-    margin-top: 12px;
-    text-align: left;
-    padding: 10px 10px 10px 0;
-  }
-  body {
-    margin: 0;
-    width: auto;
-  }
-  .page-title {
-    font-size: .75em;
-  }
-  input[type='text'],
-  input[type='tel'],
-  input[type='email'],
-  select {
-    width: 100%;
-  }
-  fieldset {
-    margin: 0 -10px;
-    padding: 0 10px;
-    border-style: none;
-  }
-  .field-title {
-    color: #24313D;
-    display: block;
-    text-align: left;
-    margin: 0 0 5px -4px;
-    padding-top: 1em;
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-  #zipcode {
-    width: 50%;
-    margin-bottom: 2em;
-  }
-  .contact-box {
-    border-top-style: solid;
-    border-color: #2D3945;
-    border-width: 2px;
-  }
-  .newsletter-box {
-    border-top-style: solid;
-    border-color: #2D3945;
-    border-width: 2px;
-  }
-
-  textarea {
-    resize: none;
-    width: 100%;
-    min-height: 100px;
-    background: #EFF0F1;
-    border-radius: 4px;
-    border: none;
-    box-shadow: inset 2px 2px 3px rgba(0,0,0, .2);
-  }
-
-
-  footer {
-    color: #4B5F72;
-    margin: 2em auto;
-    text-align: center;
-    font-style: italic;
-  }
+textarea {
+  resize: none;
+  width: 100%;
+  min-height: 100px;
+  background: #EFF0F1;
+  border-radius: 4px;
+  border: none;
+  box-shadow: inset 2px 2px 3px rgba(0,0,0, .2);
+}
+footer {
+  color: #4B5F72;
+  margin: 2em auto;
+  text-align: center;
+  font-style: italic;
+}
+label[for="feedback"] {
+  margin: 12px 0;
 }
 
 @media (min-width: 768px) {
@@ -168,7 +162,7 @@ option:not(:first-of-type) {
     display: inline-block;
     padding: 10px;
     width: 100%;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     text-align: center;
     color: white;
     background-color: #2D3945;
@@ -248,6 +242,8 @@ option:not(:first-of-type) {
   }
   #zipcode {
     margin-bottom: 2em;
+    width: 25%;
+
   }
   textarea {
     resize: none;
@@ -267,7 +263,6 @@ option:not(:first-of-type) {
   .form-group {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
